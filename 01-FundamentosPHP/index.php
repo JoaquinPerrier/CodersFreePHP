@@ -58,7 +58,18 @@
     // o
     var_dump($y || $x);
 
-    
+    // OPERADORES DE ASIGNACIÓN COMBINADA
+    // Incremento
+    $a++;
+    ++$a;
+    // Decremento
+    $a--;
+    --$a;
+    // Suma y resta
+    $w += $a;
+    $y -= $a;
+
+
 ?>
 
 <!DOCTYPE html>
