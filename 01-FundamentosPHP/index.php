@@ -11,6 +11,16 @@
     if(defined("ANIMALES")){
         echo "SI ESTA DEFINIDA";
     }
+
+    // TIPOS DE VARIABLES
+    // Integer
+    $edad = 29;
+    // Float
+    $promedio = 23.65;
+    // String
+    $cadena = 'Hola mundo "SAD"';
+    // Booleano
+    $isLogged = true;
 ?>
 
 <!DOCTYPE html>
@@ -24,13 +34,7 @@
     <p>Mi nombre es <?php echo $nombre ." ". $apellido?></p>
     <p>El curso que estoy realizando es <?php echo CURSO;?></p>
     <p>Me gustaría tener un <?php echo ANIMALES[1];?></p>
-
     <p>Mi version de PHP es <?php echo PHP_VERSION;?></p>
-
     <p>La ruta donde me encuentro es <?php echo __FILE__;?></p>
-
-
-
-
 </body>
 </html>
