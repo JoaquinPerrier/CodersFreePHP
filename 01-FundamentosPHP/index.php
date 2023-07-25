@@ -1,3 +1,8 @@
+<?php
+    $nombre = "JOAQUIN"
+    $apellido = "PERRIER"
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +11,6 @@
     <title>Document</title>
 </head>
 <body>
-    <p><?php echo "PERRER"?></p>
+    <p>Mi nombre es <?php echo $nombre . $apellido?></p>
 </body>
 </html>
