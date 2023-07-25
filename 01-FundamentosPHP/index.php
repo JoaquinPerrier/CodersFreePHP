@@ -21,6 +21,22 @@
     $cadena = 'Hola mundo "SAD"';
     // Booleano
     $isLogged = true;
+
+    // OPERADORES MATEMATICOS Y DE ASIGNACION
+    // Asignación
+    $var1 = "variable N° 1";
+    $edadNegativa = -$edad;
+    $a = 2;
+    $b = 5;
+    // Suma y resta
+    $c = $a + $b;
+    $c = $a - $b;
+    // Division y multiplicación
+    $c = $a / $b;
+    $c = $a * $b;
+    // Modulo (o resto)
+    $c = $a % $b;
+    
 ?>
 
 <!DOCTYPE html>
@@ -36,5 +52,7 @@
     <p>Me gustaría tener un <?php echo ANIMALES[1];?></p>
     <p>Mi version de PHP es <?php echo PHP_VERSION;?></p>
     <p>La ruta donde me encuentro es <?php echo __FILE__;?></p>
+    <p>La edad negativa es: <?php echo $edadNegativa;?></p>
+
 </body>
 </html>
