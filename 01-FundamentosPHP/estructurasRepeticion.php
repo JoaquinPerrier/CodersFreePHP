@@ -24,4 +24,16 @@
         echo "El nombre $value está en la posición $indice <br>";
 
     }
+
+    // Continue
+    for ($i=1; $i <= 3; $i++) { 
+
+        if($i == 2){
+            // break; TERMINE TODO EL BUCLE SI SE CUMPLE LA CONDICIÓN
+            continue; // SALTEA LO QE SIGUE, PERO VUELVE CON LA SIGUIENTE CONDICIÓN
+        }
+
+        echo "Ingreso por $i ° vez <br>";
+    }
+    
 ?>
