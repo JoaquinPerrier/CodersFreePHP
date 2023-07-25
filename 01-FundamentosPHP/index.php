@@ -36,6 +36,28 @@
     $c = $a * $b;
     // Modulo (o resto)
     $c = $a % $b;
+
+    // OPERADORES LÓGICOS Y DE COMPARACIÓN
+    $x = 10;
+    $y = 10;
+
+    // Igual
+    var_dump($y == $x);
+    // Distintos
+    var_dump($y <> $x);
+    var_dump($y != $x);
+    // Mayor o mayor igual
+    var_dump($y > $x);
+    var_dump($y >= $x);
+    // Menor o menor igual
+    var_dump($y < $x);
+    var_dump($y <= $x);
+
+    // y
+    var_dump($y && $x);
+    // o
+    var_dump($y || $x);
+
     
 ?>
 
