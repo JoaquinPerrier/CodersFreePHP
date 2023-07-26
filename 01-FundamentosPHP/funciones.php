@@ -34,4 +34,31 @@
 
     test2($b);
     echo $b . "<br>";
+
+    // VALORES POR DEFECTO COMO PARAMS
+    function valoracion($nombreCurso, $rating = 3){
+        echo "El curso de $nombreCurso tiene un rating de $rating  <br>";
+    }
+
+    valoracion("PHP 8", 9);
+
+    // CUANDO NO SE SABE LA CANTIDAD DE PARAMETROS A PASAR
+    function concatenar(...$palabras){
+        $resultado = "";
+        foreach ($palabras as $key => $palabra) {
+           $resultado .=  $palabra . " "; 
+        }
+        echo $resultado . "<br>";
+    }
+
+    concatenar("HOla", "Tito", "Como va?");
+
+    // Funciones con tipado definido. INDICA EL TIPO DE VALOR QUE PASA COMO ARGUMENTO
+    // declare(strict_types=1); PARA OBLIGAR A PASAR EL TIPO DE PARAMETRO CORRECTO
+    function sumarEnteros(int $entero1, int $entero2):int|float{
+        return $entero1 + $entero2;
+    }
+    
+    $result = sumarEnteros(20,10);
+    echo $result . "<br>";
 ?>
