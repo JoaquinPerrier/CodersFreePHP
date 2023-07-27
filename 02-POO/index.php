@@ -16,4 +16,14 @@
 
     echo "El nombre de la persona 1 es: " . $persona1->getNombre() . "<br>";
     echo "El nombre de la persona 2 es: " . $persona2->getNombre() . "<br>";
+
+    $peruano = new Peruano("TITO", "EL PERUANITO", 19);
+
+    $peruano->setNombre("ROCKER");
+
+    $chileno = new Chileno("ALONSO", "EL CHILOCA", 29);
+
+
+    var_dump($peruano); 
+
 ?>
