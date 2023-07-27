@@ -1,5 +1,6 @@
 <?php
     require_once("clases/persona.php");
+    require_once("clases/myClass.php");
 
     $persona1 = new Persona("Joaquin", "Perrier", 29);
 
@@ -25,5 +26,17 @@
 
 
     var_dump($peruano); 
+    echo "<br>";
+
+    $objetoMyClass = new myClass();
+
+    $objetoMyClass->printHello();
+    
+    $objetoMyClass2 = new myClass2();
+
+    $objetoMyClass2->printHello();
+    // echo $objetoMyClass->protected;
+    // echo $objetoMyClass->private;
+
 
 ?>
