@@ -61,4 +61,33 @@
     
     $result = sumarEnteros(20,10);
     echo $result . "<br>";
+
+    // STRINGS: MANIPULACIÓN Y USO
+   $string = "Morsillitah";
+
+   echo mb_strlen($string). "<br>"; // DEVUELVE EL LARGO DE LA CADENA
+   echo $string[2] . "<br>";
+   echo strpos($string, "h") . "<br>"; // DEVUELVE EL ÍNDICE DONDE ESTÁ EL VALOR A BUSCAR
+   echo str_contains($string, "lli") . "<br>"; // BUSCA SI LA CADENA ESTÁ DENTRO DE LA OTRA. DEVUELVE 1 SI ESTÁ o 0 SI NO ESTÁ
+   echo str_starts_with($string, "Mor") . "<br>"; // VE SI EL STRING EMPIEZA CON EL OTRO. DEVUELVE 1 SI ESTÁ o NULL SI NO ESTÁ
+   echo str_ends_with($string, "h") . "<br>"; // VE SI EL STRING EMPIEZA CON EL OTRO. DEVUELVE 1 SI ESTÁ o NULL SI NO ESTÁ
+
+    $string1 = "Cadenita 1";
+    $string2 = "CadenitA 1";
+
+    // COMPARA TODO EL STRING (DISTINGUE MAYUS Y MINUS)
+    if (strcmp($string1,$string2) == 0) {
+        echo "Las dos cadenas son iguales <br>";
+    }else{
+        echo "Las dos cadenas son distintas <br>";
+    }
+
+   // COMPARA TODO EL STRING (NO DISTINGUE MAYUS Y MINUS)
+    if (strcasecmp($string1,$string2) == 0) {
+        echo "Las dos cadenas son iguales <br>";
+    }else{
+        echo "Las dos cadenas son distintas <br>";
+    }
+
+    echo substr($string2, 2, 6) .  "<br>";
 ?>
