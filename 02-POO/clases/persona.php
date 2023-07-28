@@ -24,8 +24,22 @@
         }
     }
 
+    // TRAIT SIRVE PARA HACER UNA CLASE PADRE A UNA CLASE (EN PHP, UNA CLASE NO PUEDE SER HIJA DE DOS CLASES)
+    trait Latinoamericano{
+        public function saludoLatino(){
+            echo "HOLA LATINOOOS <br>";
+        }
+    }
+
+    trait Europeo{
+        public function saludoEuropeo(){
+            
+        }
+    }
+
     class Peruano extends Persona{
         public $departamento, $ciudad;
+        use Latinoamericano;
 
         public function setNombre($nom){
             parent::setNombre($nom); // COPIA EL METODO DEL PADRE
@@ -34,6 +48,8 @@
     }
 
     class Chileno extends Persona{
+        use Latinoamericano;
+
         public $comuna, $region;
 
     }

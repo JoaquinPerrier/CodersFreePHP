@@ -16,7 +16,7 @@ class MyClass2 extends MyClass{
     function printHello(){
         echo $this->public . "<br>";
         echo $this->protected . "<br>";
-        echo $this->private . "<br>";
+        // echo $this->private . "<br>";
     }
 }
 ?>

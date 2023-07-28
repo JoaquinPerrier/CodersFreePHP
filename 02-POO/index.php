@@ -35,6 +35,7 @@
     $objetoMyClass2 = new myClass2();
 
     $objetoMyClass2->printHello();
+    $peruano->saludoLatino();
     // echo $objetoMyClass->protected;
     // echo $objetoMyClass->private;
 
