@@ -1,6 +1,8 @@
 <?php
     require_once("clases/persona.php");
     require_once("clases/myClass.php");
+    require_once("clases/humano.php");
+    require_once("carpeta2/humano.php");
 
     $persona1 = new Persona("Joaquin", "Perrier", 29);
 
@@ -39,5 +41,10 @@
     // echo $objetoMyClass->protected;
     // echo $objetoMyClass->private;
 
+    $humano = new clases\Humano();
+    $humano2 = new carpeta2\Humano();
+
+    $humano->saludar();
+    $humano2->saludar();
 
 ?>
