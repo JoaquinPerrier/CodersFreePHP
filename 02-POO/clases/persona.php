@@ -12,12 +12,14 @@
 
         public function setNombre($nom){
             $this->nombre = ucwords(strtolower($nom));
+            return $this;
         }
         public function getNombre(){
             return $this->nombre;
         }
         public function setApellido($ape){
             $this->apellido = ucwords(strtolower($ape));
+            return $this;
         }
         public function getApellido(){
             return $this->apellido;

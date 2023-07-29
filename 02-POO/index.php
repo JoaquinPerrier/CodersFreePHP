@@ -13,6 +13,11 @@
 
     $persona2 = new Persona("RobERRERERtotto", "GUemez", 33);
 
+    // Se puede hacer Fluent interface, si en los métodos agregarmos "RETURN $THIS" para poder seguir ejecutando métodos
+    $persona2->setNombre("LA JOACA")
+                ->setApellido("PERREKE")
+                ->getNombre();
+
     /*$persona2->setNombre("RobERRERERtotto");
     $persona2->apellido = "Guemez";
     $persona2->edad = 22;*/
