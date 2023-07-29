@@ -10,8 +10,8 @@
     $persona1->apellido = "Perrier";
     $persona1->edad = 20;*/
 
-
-    $persona2 = new Persona("RobERRERERtotto", "GUemez", 33);
+    // TAMBIEN SE PUEDE INDICAR LOS NOMBRES DE LAS PROPIEDADES AL PASAR LOS VALORES DE LOS PARÁMETROS
+    $persona2 = new Persona(apellido:"GUemez", nombre:"RobERRERERtotto",  edad:33);
 
     // Se puede hacer Fluent interface, si en los métodos agregarmos "RETURN $THIS" para poder seguir ejecutando métodos
     $persona2->setNombre("LA JOACA")

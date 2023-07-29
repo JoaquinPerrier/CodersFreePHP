@@ -1,10 +1,11 @@
 <?php
     class Persona{
-        public $nombre, $apellido, $edad;
+        // public $nombre, $apellido, $edad;
 
-        public function __construct($nom,$ape,$edad){
-            $this->nombre = ucwords(strtolower($nom));
-            $this->apellido = ucwords(strtolower($ape));
+        // Se puede indicar que propiedades va a tener la clase, dentro de los parámetros de la función constructora
+        public function __construct(public $nombre,public $apellido ,public $edad){
+            $this->nombre = ucwords(strtolower($nombre));
+            $this->apellido = ucwords(strtolower($apellido));
             $this->edad = $edad;
 
         }
