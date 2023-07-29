@@ -53,8 +53,39 @@
         public $color, $seguridad;
 
         final public function saludar(){
-            echo "Bienvenido a mi hogar <br>"
+            echo "Bienvenido a mi hogar <br>";
         }
     }
+
+    // Propiedades y métodos estáticos en PHP:
+    // Se define como propiedad o método estático para poder usarlo, SIN la necesidad de instanciarlo
+    class HumanoIndex{
+        public static $nombre = "ROBERT GOMEZ BOLAÑOS";
+
+        public static function saludar(){
+            echo "Hola mundo <br>";
+        }
+
+        public function saludoPersonalizado(){
+            // echo "Hola como estás: " . $this->nombre . "<br>"; ASI DA ERROR
+            echo "Hola como estás: " . self::$nombre . "<br>"; // Self hace referencia a la clase (y la variable estática de la misma);
+
+        }
+    }
+
+    class ArgentinoIndex extends HumanoIndex{
+        public function saludoArgentino(){
+            echo "Hola saludo argentino " . parent::$nombre . "<br>";
+        }
+    }
+
+    echo HumanoIndex::$nombre . "<br>"; // Imprime la variable estática $nombre
+    HumanoIndex::saludar(); // ejecuta el método estático saludar()
+    
+    $humanoIndex = new HumanoIndex();
+    $humanoIndex->saludoPersonalizado(); // Usa la varible estática, en un método de la clase
+
+    $argentinoIndex = new ArgentinoIndex();
+    $argentinoIndex->saludoArgentino();
 
 ?>
