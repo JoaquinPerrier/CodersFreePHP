@@ -47,4 +47,14 @@
     $humano->saludar();
     $humano2->saludar();
 
+    // Se agrega la palabra FINAL para que no pueda ser extendida por otra
+    // También se puede utilizar en los métodos, para que no se sobrescriban
+    final class Hogar{
+        public $color, $seguridad;
+
+        final public function saludar(){
+            echo "Bienvenido a mi hogar <br>"
+        }
+    }
+
 ?>
