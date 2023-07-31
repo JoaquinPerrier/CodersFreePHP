@@ -93,4 +93,14 @@
     $argentinoIndex = new ArgentinoIndex();
     $argentinoIndex->saludoArgentino();
 
+    // Expresiones regulares
+    $cadena = "Av. Lima 123";
+
+    $expresion = "/^Av/";
+
+    if (preg_match($expresion, $cadena)) {
+        echo "La cadena cumple la condición <br>";
+    }else{
+        echo "La cadena NO cumple la condición <br>";
+    }
 ?>
