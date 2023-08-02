@@ -1,0 +1,61 @@
+// CREAR SCHEMA
+create schema ejemplo;
+
+// CREAR TABLA
+CREATE TABLE `ejemplo`.`contactos` (
+  `idcontactos` INT NOT NULL AUTO_INCREMENT,
+  `nombre` VARCHAR(45) NULL,
+  `apellido` VARCHAR(64) NULL,
+  `direccion` VARCHAR(255) NULL,
+  `fecha_nacimiento` DATE NULL,
+  `familia` TINYINT NULL,
+  INDEX(`nombre`),
+  INDEX(`apellido`),
+  FULLTEXT(`direccion`),   // SIRVE PARA BUSCAR CREAR UN INDICE CON MUCHO TEXTO
+  PRIMARY KEY (`idcontactos`));
+
+// AGREGAR UN ELEMENTO A UNA TABLA
+INSERT INTO `ejemplo`.`contactos` (`nombre`, `apellido`, `direccion`, `fecha_nacimiento`, `familia`) 
+VALUES ('Joaquin', 'Perrier', '9 de julio 960 ', '1994/04/28', '1');
+
+
+// MODIFICAR DATO:
+UPDATE `ejemplo`.`contactos` SET `nombre` = 'Joaquín' WHERE (`idcontactos` = '1');
+
+// BORRAR DATO:
+DELETE FROM `ejemplo`.`contactos` WHERE (`idcontactos` = '2');
+
+// AGREGAR INDICE
+ALTER TABLE `ejemplo`.`contactos` ADD INDEX(nombre);
+
+// CONSULTAS:
+// Trae TODO:
+SELECT * FROM ejemplo.contactos;
+
+// Trae solo campos indicados:
+SELECT nombre, apellido, direccion FROM ejemplo.contactos;
+
+// Trae datos que NO se repiten:
+SELECT distinct direccion FROM ejemplo.contactos;
+
+// Cuenta cantidad de registros:
+SELECT count(*) FROM ejemplo.contactos;
+
+// Busca un determinado valor:
+SELECT * FROM ejemplo.contactos WHERE nombre = "Joaquín"; // TIENE QUE SER IGUAL A Joaquín
+SELECT * FROM ejemplo.contactos WHERE nombre like "%Joaq%"; // CONTIENE Joaq
+
+// Limita registros:
+SELECT * FROM ejemplo.contactos LIMIT 1; // INDICA CANTIDAD DE REGISTROS
+SELECT * FROM ejemplo.contactos LIMIT 1, 3; // INDICA DESDE QUE ÍNDICE, Y CUANTOS REGISTROS TRAE
+
+// Match against
+SELECT * FROM ejemplo.contactos WHERE match(direccion) against('VT 1956'); // SIRVE SOLO PARA INDICES FULLTEXT
+
+// Order by
+SELECT * FROM ejemplo.contactos order by nombre; // Ordena alfabeticamente según el campo que indiquemos. 
+SELECT * FROM ejemplo.contactos order by nombre desc; // Igual que la de arriba, pero de manera descendente
+
+// Group by
+SELECT direccion, COUNT(*) FROM ejemplo.contactos group by direccion; // Trae las direcciones únicas, y la cantidad de personas que viven ahí
+SELECT direccion, COUNT(*) FROM ejemplo.contactos group by direccion having COUNT(*)>1;

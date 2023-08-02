@@ -96,7 +96,7 @@
     // Expresiones regulares
     $cadena = "Av. Lima 123";
 
-    $expresion = "/^Av/";
+    $expresion = "/^    Av/";
 
     if (preg_match($expresion, $cadena)) {
         echo "La cadena cumple la condición <br>";
