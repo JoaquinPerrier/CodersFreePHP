@@ -59,3 +59,8 @@ SELECT * FROM ejemplo.contactos order by nombre desc; // Igual que la de arriba,
 // Group by
 SELECT direccion, COUNT(*) FROM ejemplo.contactos group by direccion; // Trae las direcciones únicas, y la cantidad de personas que viven ahí
 SELECT direccion, COUNT(*) FROM ejemplo.contactos group by direccion having COUNT(*)>1;
+
+//  Cruce de tablas (inner join, left join y right join)
+SELECT nombre, apellido, telefono, correo, fecha_hora, lugar, anotacion FROM contactos JOIN reuniones ON contactos.id = reuniones.contactos_id;
+
+SELECT nombre, apellido, telefono, correo, fecha_hora, lugar, anotacion FROM contactos LEFT JOIN reuniones ON contactos.id = reuniones.contactos_id; // TRAE TODOS LOS DATOS, SIN IMPORTAR SI TIENE REUNIONES O NO
