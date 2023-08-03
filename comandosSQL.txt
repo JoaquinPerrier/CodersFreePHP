@@ -64,3 +64,5 @@ SELECT direccion, COUNT(*) FROM ejemplo.contactos group by direccion having COUN
 SELECT nombre, apellido, telefono, correo, fecha_hora, lugar, anotacion FROM contactos JOIN reuniones ON contactos.id = reuniones.contactos_id;
 
 SELECT nombre, apellido, telefono, correo, fecha_hora, lugar, anotacion FROM contactos LEFT JOIN reuniones ON contactos.id = reuniones.contactos_id; // TRAE TODOS LOS DATOS, SIN IMPORTAR SI TIENE REUNIONES O NO
+
+SELECT nombre, apellido, telefono, correo, fecha_hora, lugar, anotacion FROM contactos RIGHT JOIN reuniones ON contactos.id = reuniones.contactos_id; // TRAE TODAS LAS REUNIONES, AUNQUE NO HAYA ASIGNADO NINGUN CONTACTO
