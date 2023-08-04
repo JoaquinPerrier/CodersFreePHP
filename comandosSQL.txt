@@ -66,3 +66,6 @@ SELECT nombre, apellido, telefono, correo, fecha_hora, lugar, anotacion FROM con
 SELECT nombre, apellido, telefono, correo, fecha_hora, lugar, anotacion FROM contactos LEFT JOIN reuniones ON contactos.id = reuniones.contactos_id; // TRAE TODOS LOS DATOS, SIN IMPORTAR SI TIENE REUNIONES O NO
 
 SELECT nombre, apellido, telefono, correo, fecha_hora, lugar, anotacion FROM contactos RIGHT JOIN reuniones ON contactos.id = reuniones.contactos_id; // TRAE TODAS LAS REUNIONES, AUNQUE NO HAYA ASIGNADO NINGUN CONTACTO
+
+// Función concat
+SELECT CONCAT(nombre, " ", apellido) AS "Nombre y apellido", telefono, correo FROM `contactos`;
