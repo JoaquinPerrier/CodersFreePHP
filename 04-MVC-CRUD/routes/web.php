@@ -3,16 +3,21 @@
 use Lib\Route;
 
 Route::get('/',function(){
-    echo "Hola desde la página principal";
+    return ['title'=>'PRUBEA INICIO', 'content'=>"CONTENIDO"];
 });
 
 Route::get('/contact',function(){
-    echo "Hola desde CONTACT";
+    return "Hola desde CONTACT";
 });
 
 Route::get('/about',function(){
-    echo "Hola desde ABOUT";
+    return "Hola desde ABOUT";
 });
+
+Route::get('/courses/:slug',function($slug){
+    return "Hola desde courses con variables y el param pasado es $slug <br>";
+});
+
 
 Route::dispatch();
 ?>
