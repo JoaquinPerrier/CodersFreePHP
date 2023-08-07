@@ -1,10 +1,9 @@
 <?php
 
 use Lib\Route;
+use App\Controllers\HomeController;
 
-Route::get('/',function(){
-    return ['title'=>'PRUBEA INICIO', 'content'=>"CONTENIDO"];
-});
+Route::get('/',[HomeController::class, 'index']);
 
 Route::get('/contact',function(){
     return "Hola desde CONTACT";
