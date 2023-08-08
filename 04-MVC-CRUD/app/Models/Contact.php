@@ -11,6 +11,7 @@ class Contact{
     protected $db_name = DB_NAME;
 
     protected $connection;
+    protected $query;
 
     public function __construct(){
         $this->connection();
@@ -24,6 +25,18 @@ class Contact{
         }
     }
 
+    public function query($sql){
+        $this->query = $this->connection->query($sql);
+        return $this;
+    }
+
+    public function first(){
+        return $this->query->fetch_assoc();
+    }
+
+    public function get(){
+        return $this->query->fetch_all(MYSQLI_ASSOC);
+    }
 }
 
 ?>
