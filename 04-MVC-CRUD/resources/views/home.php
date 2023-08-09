@@ -10,5 +10,6 @@
 
     <p>  <b>Título: </b><?php echo $title?></p>
     <p>  <b>Descripción: </b><?php echo $description?></p>
+    <?php var_dump($dataDesdeDB);?>
 </body>
 </html>
