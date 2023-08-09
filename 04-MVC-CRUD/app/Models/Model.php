@@ -59,6 +59,39 @@ class Model{
 
         return $this->query($sql)->first();
     }
+
+    public function where($column, $value){
+        // SELECT * FROM contacts WHERE name = "Juan"
+        $sql = "SELECT * FROM {$this->table} WHERE {$column} = '{$value}'";
+
+        $this->query($sql);
+        return $this;
+    }
+
+    public function create($data){
+        // INSERT INTO contacts (name, email, phone) VALUE (' ',' ',' ')
+        $columns = array_keys($data);
+        $columns = implode(', ', $columns); // TRANSFORMA UN ARRAY, EN UNA CADENA
+
+        $values = array_values($data);
+        $values = "'". implode("', '", $values). "'";
+
+        $sql = "INSERT INTO {$this->table} ({$columns}) VALUES ({$values})";
+
+        $this->query($sql);
+
+        $insert_id = $this->connection->insert_id; // DEVUELVE EL ULTIMO ID DEL NUEVO REGISTRO
+
+        return $this->find($insert_id);
+        
+    }
+
+    public function delete($id){
+        // DELETE FROM contacts WHERE id = 1
+        $sql = "DELETE FROM {$this->table} WHERE id = {$id}";
+        
+        $this->query($sql);
+    }
 }
 
 ?>
