@@ -51,6 +51,14 @@ class Model{
 
         return $this->query($sql)->get();
     }
+
+    public function find($id){
+
+        // SELECT * FROM contacts WHERE id = 1
+        $sql = "SELECT * FROM {$this->table} WHERE id = {$id}";
+
+        return $this->query($sql)->first();
+    }
 }
 
 ?>
