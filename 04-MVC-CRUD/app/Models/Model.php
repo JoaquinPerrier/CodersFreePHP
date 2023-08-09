@@ -44,8 +44,10 @@ class Model{
 
     // Consultas
     public function all(){
+        // return $this->table;
+
         // SELECT * FROM contacts
-        $sql = "SELECT * FROM contacts";
+        $sql = "SELECT * FROM {$this->table}";
 
         return $this->query($sql)->get();
     }
